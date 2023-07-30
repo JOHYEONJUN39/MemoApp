@@ -1,17 +1,27 @@
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ViewStyle,
+} from 'react-native';
 import React from 'react';
 
 type Props = {
   children: React.ReactNode;
+  style?: ViewStyle;
 };
 
-export default function CircleButton({ children }: Props) {
+export default function CircleButton({ children, style }: Props) {
   return (
-    <View style={styles.circleButton}>
+    <View style={[styles.circleButton, style]}>
       <Text style={styles.circleButtonLabel}>{children}</Text>
     </View>
   );
 }
+
+CircleButton.defaultProps = {
+  style: {}, // 원하는 경우 기본 스타일을 빈 객체로 지정하거나 다른 스타일 객체를 넣을 수 있습니다.
+};
 
 const styles = StyleSheet.create({
   circleButton: {
