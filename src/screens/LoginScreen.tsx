@@ -1,22 +1,36 @@
 import {
-  StyleSheet, View, Text, TextInput, Alert, TouchableOpacity,
+  StyleSheet, View, Text, TextInput, TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import AppBar from '../components/AppBar.tsx';
 import SubmitButton from '../components/SubmitButton.tsx';
+import type Navigate from '../types/navigation.interface.ts';
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation } : Navigate) {
   return (
     <View style={styles.container}>
-      <AppBar />
       <View style={styles.inner}>
         <Text style={styles.title}>Log In</Text>
         <TextInput style={styles.input} value="Email Address" />
         <TextInput style={styles.input} value="Password" />
-        <SubmitButton onPress={() => { Alert.alert('On Press!'); }} label="Submit" />
+        <SubmitButton
+          onPress={() => {
+            navigation.reset({
+              index: 0,
+              routes: [{ name: 'MemoList' }],
+            });
+          }}
+          label="Submit"
+        />
         <View style={styles.footer}>
           <Text style={styles.footerText}>Not registered?</Text>
-          <TouchableOpacity onPress={() => { Alert.alert('On Press!'); }}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.reset({
+                index: 0,
+                routes: [{ name: 'SignUp' }],
+              });
+            }}
+          >
             <Text style={styles.footerLink}>Sign up here!</Text>
           </TouchableOpacity>
         </View>
