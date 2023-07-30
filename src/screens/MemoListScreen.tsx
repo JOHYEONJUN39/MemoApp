@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native';
+import { Alert, StyleSheet, View } from 'react-native';
 import React from 'react';
 import AppBar from '../components/AppBar.tsx';
 import MemoList from '../components/MemoList.tsx';
@@ -9,7 +9,7 @@ export default function MemoListScreen() {
     <View style={styles.container}>
       <AppBar />
       <MemoList />
-      <CircleButton name="plus" />
+      <CircleButton onPress={() => { Alert.alert('On Press!'); }} name="plus" />
     </View>
   );
 }

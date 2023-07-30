@@ -1,5 +1,5 @@
 import {
-  StyleSheet, View, TextInput, KeyboardAvoidingView,
+  StyleSheet, View, TextInput, KeyboardAvoidingView, Alert,
 } from 'react-native';
 import React from 'react';
 import AppBar from '../components/AppBar.tsx';
@@ -12,7 +12,7 @@ export default function MemoCreateScreen() {
       <View style={styles.inputContainer}>
         <TextInput value="" multiline style={styles.input} />
       </View>
-      <CircleButton name="check" />
+      <CircleButton onPress={() => { Alert.alert('On Press!'); }} name="check" />
     </KeyboardAvoidingView>
   );
 }

@@ -1,5 +1,5 @@
 import {
-  StyleSheet, View, ViewStyle,
+  StyleSheet, ViewStyle, TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
@@ -7,13 +7,14 @@ import { Feather } from '@expo/vector-icons';
 type Props = {
   style?: ViewStyle;
   name: string;
+  onPress: () => void;
 };
 
-export default function CircleButton({ style, name }: Props) {
+export default function CircleButton({ style, name, onPress }: Props) {
   return (
-    <View style={[styles.circleButton, style]}>
+    <TouchableOpacity onPress={onPress} style={[styles.circleButton, style]}>
       <Feather name={name} size={32} color="white" />
-    </View>
+    </TouchableOpacity>
   );
 }
 

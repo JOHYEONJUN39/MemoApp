@@ -1,15 +1,16 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text } from 'react-native';
 
 type props = {
   label: string;
+  onPress: () => void;
 }
 
-export default function SubmitButton({ label } : props) {
+export default function SubmitButton({ label, onPress } : props) {
   return (
-    <View style={styles.buttonContainer}>
+    <TouchableOpacity onPress={onPress} style={styles.buttonContainer}>
       <Text style={styles.buttonLabel}>{label}</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
