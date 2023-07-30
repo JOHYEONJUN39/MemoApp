@@ -1,26 +1,24 @@
 import {
-  StyleSheet,
-  Text,
-  View,
-  ViewStyle,
+  StyleSheet, View, ViewStyle,
 } from 'react-native';
 import React from 'react';
+import { Feather } from '@expo/vector-icons';
 
 type Props = {
-  children: React.ReactNode;
   style?: ViewStyle;
+  name: string;
 };
 
-export default function CircleButton({ children, style }: Props) {
+export default function CircleButton({ style, name }: Props) {
   return (
     <View style={[styles.circleButton, style]}>
-      <Text style={styles.circleButtonLabel}>{children}</Text>
+      <Feather name={name} size={32} color="white" />
     </View>
   );
 }
 
 CircleButton.defaultProps = {
-  style: {}, // 원하는 경우 기본 스타일을 빈 객체로 지정하거나 다른 스타일 객체를 넣을 수 있습니다.
+  style: {},
 };
 
 const styles = StyleSheet.create({

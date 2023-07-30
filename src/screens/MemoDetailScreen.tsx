@@ -1,8 +1,5 @@
 import {
-  StyleSheet,
-  View,
-  Text,
-  ScrollView,
+  StyleSheet, View, Text, ScrollView,
 } from 'react-native';
 import React from 'react';
 import AppBar from '../components/AppBar.tsx';
@@ -23,7 +20,7 @@ export default function MemoDetailScreen() {
           本文用なので使い方を間違えると不自然に見えることもありますので要注意。
         </Text>
       </ScrollView>
-      <CircleButton style={{ top: 160, bottom: 'auto' }}>+</CircleButton>
+      <CircleButton name="edit-2" style={{ top: 160, bottom: 'auto' }} />
     </View>
   );
 }
